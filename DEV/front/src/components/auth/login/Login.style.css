@@ -1,0 +1,10 @@
+.eclat__login {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+}
+
+.eclat__login input {
+  padding: 0.4em;
+  font-size: 0.7em;
+}

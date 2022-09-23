@@ -1,0 +1,46 @@
+.eclat__content--waiting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.eclat__logger {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 700px;
+}
+
+.eclat__interact {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 1em 2em 1em 1em;
+}
+
+.eclat__logo-title {
+  padding: 0.8em 2.4em;
+  margin-bottom: 2em;
+  width: fit-content;
+  background-color: var(--grey-bg, #c0c0c0);
+}
+
+.eclat__logo-title img {
+  width: 1.6em;
+}
+
+.eclat__title {
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.eclat__picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  min-width: 350px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--grey-bg, #f0ffff);
+}

@@ -1,0 +1,44 @@
+.popup {
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 0.2em 0;
+  width: 100%;
+  max-height: 48px;
+  overflow: hidden;
+  
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+    padding: 0.2em 1em;
+    scale: 1;
+    transition: scale linear 330ms;
+  }
+
+  &__default {
+    background-color: #F7F6F6;
+    border-radius: 16px;
+    box-shadow: 0 0 1px 1px #00000033;
+    font-size: 0.65em;
+    color: #9b9797;
+  }
+  
+  &__picto {
+    width: 20px;
+    height: 20px;
+  }
+  
+  &__close {
+    padding-left: 2em;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  &__closing {
+    scale: 0;
+  }
+}

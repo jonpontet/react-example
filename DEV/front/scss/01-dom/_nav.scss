@@ -1,0 +1,20 @@
+.nav {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+  background-color: white;
+  border-right: 1px solid #{"rgb(0 0 0 / 0.25)"};
+  border-bottom: 1px solid #{"rgb(0 0 0 / 0.25)"};
+
+  &__button {
+    padding: 0.5em;
+    cursor: pointer;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+}

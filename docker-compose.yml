@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  engine:
+    container_name: "${CONTAINER_NAME}_engine"
+    build: ./DEV/engine
+    restart: unless-stopped
+    env_file: ./.env
+    volumes:
+      - ./DEV/engine/src:/usr/app/src
+      - ./DATAS:/var/lib/data
+    networks:
+      - networkName
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.${PROJECT_NAME}_api.loadbalancer.server.port=3000"
+      - "traefik.http.routers.${PROJECT_NAME}_api.entrypoints=http"
+      - "traefik.http.routers.${PROJECT_NAME}_api.rule=Host(`${HOST_ENGINE}`)"
+  front:
+    container_name: "${CONTAINER_NAME}_front"
+    build: ./DEV/front
+    restart: unless-stopped
+    volumes:
+      - ./DEV/front:/home/app
+    networks:
+      - networkName
+    ports:
+      - 3000:3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.${PROJECT_NAME}_front.loadbalancer.server.port=3000"
+      - "traefik.http.routers.${PROJECT_NAME}_front.entrypoints=http"
+      - "traefik.http.routers.${PROJECT_NAME}_front.rule=Host(`${HOST_FRONT}`)"
+networks:
+  networkName:
+    name: "${CONTAINER_NAME}_net"
+    driver: bridge
